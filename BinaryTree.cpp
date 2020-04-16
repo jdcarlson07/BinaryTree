@@ -1,5 +1,6 @@
 #include "BinaryTree.hpp"
-
+#include "iostream"
+using namespace std;
 BinaryTree::BinaryTree(int payload)
 {
     this->payload = payload;
@@ -9,17 +10,47 @@ BinaryTree::BinaryTree(int payload)
 
 void BinaryTree::displayInOrder()
 {
+    if(leftChild)
+    {
+        leftChild->displayInOrder();
+    }
 
+    cout<< to_string(payload) + "\n";
+
+    if(rightChild)
+    {
+        rightChild->displayInOrder();
+    }
 }
         
 void BinaryTree::displayPreOrder()
 {
+    cout<< to_string(payload) + "\n";
 
+    if(leftChild)
+    {
+        leftChild->displayInOrder();
+    }
+
+    if(rightChild)
+    {
+        rightChild->displayInOrder();
+    }
 }
 
 void BinaryTree::displayPostOrder()
 {
+    if(leftChild)
+    {
+        leftChild->displayInOrder();
+    }
 
+    if(rightChild)
+    {
+        rightChild->displayInOrder();
+    }
+
+    cout<< to_string(payload) + "\n";
 }
 
 void BinaryTree::add(int payload)

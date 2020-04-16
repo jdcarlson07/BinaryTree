@@ -15,5 +15,10 @@ int main()
      theTree->add(90);
      theTree->add(17);
      theTree->add(111);
+     theTree->displayInOrder();
+     cout<<"\n";
+     theTree->displayPreOrder();
+     cout<<"\n";
+     theTree->displayPostOrder();
 
 }
